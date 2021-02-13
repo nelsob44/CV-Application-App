@@ -6,7 +6,7 @@
       dark
     >
       <div class="d-flex align-center">
-        <p class="text-toolbar">Netsells</p>
+        <p class="text-toolbar">Nelson's Profile Builder App</p>
       </div>
 
       <v-spacer></v-spacer>

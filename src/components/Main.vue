@@ -12,10 +12,33 @@
             dark
             color="primary"
           >
+            <p class="text-toolbar">Nelson's Profile Builder App</p>
+            <v-spacer></v-spacer>
+            <v-toolbar-items>
+              <div>
+                <v-tooltip v-if="!$vuetify.theme.dark" bottom>
+                  <template v-slot:activator="{ on }">
+                    <v-btn v-on="on" color="info" small fab @click="darkMode">
+                      <v-icon class="mr-1">mdi-moon-waxing-crescent</v-icon>
+                    </v-btn>
+                  </template>
+                  <span>Dark Mode On</span>
+                </v-tooltip>
+
+                <v-tooltip v-else bottom>
+                  <template v-slot:activator="{ on }">
+                    <v-btn v-on="on" color="info" small fab @click="darkMode">
+                      <v-icon color="yellow">mdi-white-balance-sunny</v-icon>
+                    </v-btn>
+                  </template>
+                  <span>Dark Mode Off</span>
+                </v-tooltip>
+              </div>
+            </v-toolbar-items>
             
           </v-toolbar>
           <div class="row-class-div">
-              <p color="error" class="justify-center top">Welcome</p>
+              <p color="error" class="justify-center top">Welcome!</p>
           </div>
           <div class="row-class-div">
               <p class="white-bold top-one">We're excited to see what you can do!</p>
@@ -27,7 +50,7 @@
                   color="error"
                   @click="beginApplication()"
                 >
-                Begin
+                Click here to begin
                 </v-btn>
               </p>
           </div>
@@ -284,6 +307,9 @@ import form from "../../form";
       },
       beginApplication() {
         this.dialog2 = false;
+      },
+      darkMode() {
+        this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
       }
     }
   }
